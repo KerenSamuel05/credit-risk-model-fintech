@@ -1,140 +1,151 @@
-# 🏦 Credit Risk Prediction Model
+# 💳 Credit Risk Prediction App
 
-A machine learning project focused on predicting **loan default risk** using borrower financial and behavioral data. This project simulates how financial institutions assess creditworthiness and balance **risk vs business growth**.
-
----
-
-## 🚀 Project Overview
-
-The goal of this project is to build and evaluate models that can predict whether a borrower is likely to default on a loan.
-
-Instead of focusing purely on code, this project follows a **problem-first, iterative development approach**, leveraging AI-assisted workflows to rapidly prototype, test, and refine models while maintaining a strong focus on **financial reasoning and model interpretation**.
+A machine learning-powered web application that predicts the probability of loan default based on applicant financial and demographic data. Built using Python, Scikit-learn, and Streamlit, and deployed as an interactive web app.
 
 ---
 
-## 📊 Dataset Features
+## 🚀 Live Demo
 
-The dataset includes borrower-level information such as:
-
-- Age, Income, Employment Length  
-- Loan Amount, Interest Rate  
-- Loan Intent & Grade  
-- Home Ownership Status  
-- Historical Default Indicator  
-
-**Target Variable:**
-- `loan_status` → 0 (No Default), 1 (Default)
+👉 *https://credit-risk-model-fintech-5xiauoafjveggybkge37v8.streamlit.app*
 
 ---
 
-## ⚙️ Workflow
+## 🧠 Project Overview
 
-### 1. Data Preprocessing
-- Handled missing values using median imputation  
-- Removed unrealistic values (e.g., extreme age/employment length)  
-- Encoded categorical variables using one-hot encoding  
+This project aims to simulate a real-world credit risk assessment system used in financial institutions. Users can input applicant details such as income, loan amount, credit history, and more, and receive an instant prediction of default risk along with a probability score.
 
-### 2. Feature Engineering
-- Focused on financially relevant indicators such as:
-  - Loan-to-income ratio  
-  - Interest rate  
-  - Credit history  
-
-### 3. Model Building
-
-#### 🔹 Logistic Regression
-- Baseline model for binary classification  
-- Applied **StandardScaler** for feature normalization  
-- Improved using `class_weight='balanced'` to address class imbalance  
-
-#### 🔹 Decision Tree Classifier
-- Captures non-linear relationships  
-- Used for comparison against Logistic Regression  
+The model is designed to prioritize identifying high-risk applicants, reflecting real-world lending scenarios where minimizing default risk is critical.
 
 ---
 
-## 📈 Model Performance
+## ⚙️ Features
 
-### Logistic Regression (Balanced)
-- Accuracy: ~80%  
-- Recall (Default): **78%**  
-- Strong at identifying high-risk borrowers  
-
-### Decision Tree
-- Accuracy: ~90%  
-- Recall (Default): **58%**  
-- Better overall accuracy but weaker in risk detection  
+* Interactive web UI using Streamlit
+* Real-time credit risk prediction
+* Probability-based risk scoring
+* Handles categorical data using one-hot encoding
+* Includes data preprocessing (missing values, scaling, feature engineering)
+* Clean and user-friendly interface
 
 ---
 
-## ⚖️ Key Insight
+## 🏗️ Tech Stack
 
-> In credit risk modeling, **recall is more important than accuracy**.
-
-- Logistic Regression performed better in detecting defaulters  
-- Decision Tree performed better in overall classification accuracy  
-
-This highlights the trade-off between:
-- **Risk Control (minimizing defaults)**  
-- **Business Growth (approving more customers)**  
+* Python
+* Scikit-learn
+* Pandas
+* NumPy
+* Streamlit
 
 ---
 
-## 🎯 Threshold Tuning
+## 📊 Machine Learning Model
 
-Instead of relying on a fixed 0.5 threshold, probability-based predictions were used:
+* Model: Logistic Regression
+* Class imbalance handled using `class_weight='balanced'`
+* Feature scaling applied using StandardScaler
+* Evaluation metrics considered:
 
-- Lower threshold → Higher recall (more risk detection)  
-- Higher threshold → Fewer false positives (more approvals)  
+  * Accuracy
+  * Precision & Recall
+  * Classification Report
 
-This mirrors real-world lending strategies where models are tuned based on business objectives.
-
----
-
-## 💼 Business Impact
-
-This model demonstrates how financial institutions:
-
-- Assess borrower risk using data  
-- Optimize approval strategies  
-- Balance profitability with default risk  
+The model is tuned to **prioritize recall for high-risk cases**, ensuring risky applicants are less likely to be misclassified as safe.
 
 ---
 
-## 🧠 Key Learnings
+## 📁 Project Structure
 
-- Model evaluation must go beyond accuracy  
-- Recall is critical in risk-sensitive domains  
-- Feature scaling improves model convergence  
-- AI-assisted workflows can accelerate development while maintaining analytical depth  
-
----
-
-## 🛠️ Tech Stack
-
-- Python  
-- pandas  
-- scikit-learn  
-- matplotlib (for visualization)  
-- Google Colab  
+```
+credit-risk-app/
+│
+├── app.py              # Streamlit application
+├── model.pkl           # Trained ML model
+├── scaler.pkl          # Scaler used during training
+├── requirements.txt    # Dependencies
+└── README.md           # Project documentation
+```
 
 ---
 
-## 📌 Future Improvements
+## 🧪 Input Features
 
-- Implement Random Forest / Gradient Boosting  
-- Hyperparameter tuning  
-- ROC-AUC analysis  
-- Deployment as a simple web app  
+The model uses 22 features including:
+
+* Personal Information:
+
+  * Age
+  * Income
+  * Employment Length
+  * Credit History Length
+
+* Loan Details:
+
+  * Loan Amount
+  * Interest Rate
+  * Loan-to-Income Ratio
+
+* Categorical Variables:
+
+  * Home Ownership
+  * Loan Intent
+  * Loan Grade
+  * Default History
+
+Categorical features are encoded using one-hot encoding to match training data.
 
 ---
 
-## 🤝 Contributing
+## ▶️ How to Run Locally
 
-Open to suggestions, improvements, and discussions!
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/credit-risk-predictor.git
+cd credit-risk-predictor
+```
+
+2. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+3. Run the app:
+
+```
+streamlit run app.py
+```
 
 ---
 
-## 📬 Connect
+## 🌍 Deployment
 
-If you're interested in fintech, data analytics, or machine learning, feel free to connect or reach out!
+The app is deployed using Streamlit Community Cloud for easy access and sharing.
+
+---
+
+## 💡 Future Improvements
+
+* Add model comparison (Logistic Regression vs Decision Tree)
+* Improve UI design with better visualizations
+* Add feature importance explanation
+* Integrate real datasets or APIs
+* Enhance validation and user feedback
+
+---
+
+## 📌 Key Takeaways
+
+* Built an end-to-end ML pipeline from preprocessing to deployment
+* Handled real-world challenges like class imbalance and feature engineering
+* Developed a user-facing ML application, not just a model
+
+---
+
+## 🤝 Connect
+
+If you found this project interesting or have feedback, feel free to connect!
+
+---
+
