@@ -1,6 +1,6 @@
 # 💳 Credit Risk Prediction App
 
-A machine learning-powered web application that predicts the probability of loan default based on applicant financial and demographic data. Built using Python, Scikit-learn, and Streamlit, and deployed as an interactive web app.
+A machine learning-powered web application created with an AI assisted development approach that predicts the probability of loan default based on applicant financial and demographic data. Built using Python, Scikit-learn, and Streamlit, and deployed as an interactive web app.
 
 ---
 
@@ -122,16 +122,6 @@ streamlit run app.py
 ## 🌍 Deployment
 
 The app is deployed using Streamlit Community Cloud for easy access and sharing.
-
----
-
-## 💡 Future Improvements
-
-* Add model comparison (Logistic Regression vs Decision Tree)
-* Improve UI design with better visualizations
-* Add feature importance explanation
-* Integrate real datasets or APIs
-* Enhance validation and user feedback
 
 ---
 
